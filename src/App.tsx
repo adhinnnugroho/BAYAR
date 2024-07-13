@@ -1,8 +1,6 @@
 import './App.css'
-import MainMenu from './Components/MainMenu';
-import Saldo from './Components/Saldo';
-import MobileNavigations from './Layouts/_mobile_navigation';
-import NavigationBar from './Layouts/_navigation'
+import ComponentManagements from '@components/ComponentManagements';
+import LayoutManagements from '@layouts/LayoutManagements';
 import {
   CircularProgressbar,
   buildStyles
@@ -11,16 +9,16 @@ import {
 function App() {
   return (
     <>
-      <NavigationBar />
+      <LayoutManagements.NavigationBar />
       <div className="bg-gray-200 p-5">
         <div className="mb-2">
-          <Saldo />
-          <MainMenu />
+          <ComponentManagements.Saldo />
+          <ComponentManagements.MainMenu />
         </div>
 
         <div className="grid grid-cols-2 gap-2 h-auto mt-5">
           <div className="col-span-1">
-            <div className="bg-white p-3 rounded-lg drop-shadow h-52">
+            <div className="border border-gray-400 p-3 rounded-lg drop-shadow h-52">
               <h5 className="text-2xl font-semibold">Pembayaran SPP</h5>
               <div style={{ width: 90, height: 90 }} className='flex justify-center content-center mx-auto'>
                 <CircularProgressbar
@@ -43,13 +41,13 @@ function App() {
             </div>
           </div>
           <div className="col-span-1">
-            <div className="bg-white p-3 rounded-lg drop-shadow mb-4 h-24">
+            <div className="border border-gray-400 p-3 rounded-lg drop-shadow mb-4 h-32">
               <h5 className="text-2xl font-semibold">Tabunganku</h5>
               <h6 className='mt-1'>
                 Saldo <span className="text-red-500">Rp 5.000.000</span>
               </h6>
             </div>
-            <div className="bg-white p-2 rounded-lg drop-shadow h-24">
+            <div className="border border-gray-400 p-2 rounded-lg drop-shadow h-16">
               <h5 className="text-2xl font-semibold">Banner</h5>
             </div>
           </div>
@@ -63,7 +61,7 @@ function App() {
           </div>
         </div>
       </div>
-      <MobileNavigations />
+      <LayoutManagements.MobileNavigations />
     </>
   )
 }
